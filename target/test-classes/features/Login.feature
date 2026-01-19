@@ -6,8 +6,8 @@ And click on login button
 Then user shouild loged in and navigate to My Account Page
 
 Scenario: Login with invalid credentials
-When user should navigate to Login page
-And user enters invalid credentials
+Given  user should navigate to Login page
+When user enters invalid credentials
 And click on login button
 Then user should not logged in 
 

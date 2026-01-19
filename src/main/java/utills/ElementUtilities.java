@@ -11,7 +11,7 @@ public class ElementUtilities {
 		this.driver = driver;
 	}
 
-	public void clickOnElement(WebDriver driver, WebElement element) {
+	public void clickOnElement(WebElement element) {
 		if (isElementInDisplayed(element)&& isElementInEnabledState(element)) {
 			element.click();
 		}

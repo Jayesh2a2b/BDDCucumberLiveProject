@@ -5,10 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
-	WebDriver driver;
+import pages.root.RootPage;
 
+public class HomePage extends RootPage{
+	WebDriver driver;
 	public HomePage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -17,14 +19,14 @@ public class HomePage {
 	private WebElement myAccountDropmenu;
 
 	public void clickOnMyAccountDropmenu() {
-		myAccountDropmenu.click();
+		elementUtilities.clickOnElement(myAccountDropmenu);
 	}
 
 	@FindBy(xpath = "//ul[@class='dropdown-menu dropdown-menu-right']//a[text()='Register']")
 	private WebElement registerOption;
 
 	public RegisterPage clickOnRegisterOption() {
-		registerOption.click();
+		elementUtilities.clickOnElement(registerOption);
 		return new RegisterPage(driver);
 	}
 
@@ -32,7 +34,7 @@ public class HomePage {
 	private WebElement loginOption;
 
 	public LoginPage clickOnLoginOption() {
-		loginOption.click();
+		elementUtilities.clickOnElement(loginOption);
 		return new LoginPage(driver);
 	}
 }

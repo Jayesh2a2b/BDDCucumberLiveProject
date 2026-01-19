@@ -5,10 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegisterPage {
-	WebDriver driver;
+import pages.root.RootPage;
 
+public class RegisterPage extends RootPage {
+	WebDriver driver;
 	public RegisterPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -17,55 +19,54 @@ public class RegisterPage {
 	private WebElement firstNameField;
 
 	public void enterFirstName(String firstNameText) {
-		firstNameField.sendKeys(firstNameText);
+		elementUtilities.enterTextIntoElement(firstNameField, firstNameText);
 	}
 
 	@FindBy(id = "input-lastname")
 	private WebElement lastNameField;
 
 	public void enterLastName(String lastNameText) {
-		lastNameField.sendKeys(lastNameText);
+		elementUtilities.enterTextIntoElement(lastNameField, lastNameText);
 	}
 
 	@FindBy(id = "input-email")
 	private WebElement emailField;
 
 	public void enterEmail(String emailText) {
-		emailField.sendKeys(emailText);
+		elementUtilities.enterTextIntoElement(emailField, emailText);
 	}
 
 	@FindBy(id = "input-telephone")
 	private WebElement telephoneField;
 
 	public void enterTelephone(String telephoneText) {
-		telephoneField.sendKeys(telephoneText);
+		elementUtilities.enterTextIntoElement(telephoneField, telephoneText);
 	}
 
 	@FindBy(id = "input-password")
 	private WebElement passwordFiels;
 
 	public void enterPassword(String passwordText) {
-		passwordFiels.sendKeys(passwordText);
+		elementUtilities.enterTextIntoElement(passwordFiels, passwordText);
 	}
 
 	@FindBy(id = "input-confirm")
 	private WebElement confirmPasswordField;
-
-	public void enterConfirmPassword(String confirmPassword) {
-		confirmPasswordField.sendKeys(confirmPassword);
+   public void enterConfirmPassword(String confirmPasswordText) {
+	   elementUtilities.enterTextIntoElement(confirmPasswordField, confirmPasswordText);
 	}
 
 	@FindBy(xpath = "//input[@name='agree']")
 	private WebElement privacyPolicyOption;
 
 	public void clickOnPrivacyPolicyOption() {
-		privacyPolicyOption.click();
+		elementUtilities.clickOnElement(privacyPolicyOption);
 	}
 	@FindBy(xpath="//input[@class='btn btn-primary']")
 	private WebElement continueButton;
 	public AccountSuccessPage clickOnContinueButton()
 	{
-		continueButton.click();
+		elementUtilities.clickOnElement(continueButton);
 		return new  AccountSuccessPage(driver);
 	}
 	@FindBy(xpath="//ul[@class='breadcrumb']//a[text()='Register']")

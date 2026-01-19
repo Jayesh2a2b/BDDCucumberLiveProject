@@ -3,10 +3,13 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class LogoutPage {
+import pages.root.RootPage;
+
+public class LogoutPage extends RootPage {
 WebDriver driver;
 public LogoutPage(WebDriver driver)
 {
+	super(driver);
 	this.driver=driver;
 	PageFactory.initElements(driver,this);
 }

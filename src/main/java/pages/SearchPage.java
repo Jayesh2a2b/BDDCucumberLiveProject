@@ -3,10 +3,12 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class SearchPage {
-	WebDriver driver;
+import pages.root.RootPage;
 
+public class SearchPage extends RootPage{
+	WebDriver driver;
 	public SearchPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
