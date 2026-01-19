@@ -1,0 +1,13 @@
+# Maven
+target/
+
+# Reports
+*.html
+
+# Eclipse
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
