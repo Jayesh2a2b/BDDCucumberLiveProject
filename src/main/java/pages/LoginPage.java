@@ -21,4 +21,13 @@ public boolean isLoginBreadcrumbAvailableOnPage()
 {
 	return loginBreadcrumb.isDisplayed();
 }
+
+@FindBy(xpath = "//a[text()='Continue']")
+private WebElement continueButton;
+
+public RegisterPage clickOnContinueButton() {
+	elementUtilities.clickOnElement(continueButton);
+	return new RegisterPage(driver);
+}
+
 }

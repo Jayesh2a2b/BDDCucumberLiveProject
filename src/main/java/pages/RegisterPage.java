@@ -75,11 +75,84 @@ public class RegisterPage extends RootPage {
 	{
 		return registerBreadcrumbOption.isDisplayed();
 	}
-	@FindBy(xpath="registerPage")
-	private WebElement privacyWarningMsg;
-	public boolean isPrivacyPolicyWarningMsgAvailableOnPage()
-	{
-		return privacyWarningMsg.isDisplayed();
+
+	@FindBy(xpath = "//div[text()='First Name must be between 1 and 32 characters!']")
+	private WebElement FirstNameWarningMsg;
+
+	public boolean isFirstNameWarningMsgAvailableOnRegisterPage() {
+		return elementUtilities.isElementDisplayed(FirstNameWarningMsg);
 	}
+
+	public String getFirstNameWarningMsg() {
+		return elementUtilities.getTextFromElement(FirstNameWarningMsg);
+	}
+
+	@FindBy(xpath = "//div[text()='Last Name must be between 1 and 32 characters!']")
+	private WebElement LastNameWarningMsg;
+
+	public boolean IsLastNameWarningMsgAvailableOnRegisterPage() {
+		return elementUtilities.isElementDisplayed(LastNameWarningMsg);
+	}
+
+	public String getLastNameWarningMsg() {
+		return elementUtilities.getTextFromElement(LastNameWarningMsg);
+	}
+
+	@FindBy(xpath = "//div[text()='E-Mail Address does not appear to be valid!']")
+	private WebElement EmailWarningMsg;
+
+	public boolean IsEmailWarningMsgAvailableOnRegisterPage() {
+		return	elementUtilities.isElementDisplayed(EmailWarningMsg);
+	}
+
+	@FindBy(xpath = "//div[text()='Telephone must be between 3 and 32 characters!']")
+	private WebElement TelephoneWarningMsg;
+
+	public boolean IsTelephoneWarningMsgAvailableOnRegisterPage() {
+		return elementUtilities.isElementDisplayed(TelephoneWarningMsg);
+	}
+
+	public String getTelephoneWarningMsg() {
+		return elementUtilities.getTextFromElement(TelephoneWarningMsg);
+	}
+
+	@FindBy(xpath = "//div[text()='Password must be between 4 and 20 characters!']")
+	private WebElement PasswordWarningMsg;
+
+	public boolean IsPasswordWarningMsgAvailableOnRegisterPage() {
+		return elementUtilities.isElementDisplayed(PasswordWarningMsg);
+	}
+
+	public String getPasswordWarningMsg() {
+		return elementUtilities.getTextFromElement(PasswordWarningMsg);
+	}
+
+	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
+	private WebElement PrivacyPolicyWarningMsg;
+
+	public boolean IsPrivacyPolicyWarningMsgAvailableOnRegisterPage() {
+		return elementUtilities.isElementDisplayed(PrivacyPolicyWarningMsg);
+	}
+
+	public String getPrivacyPolicyWarningMsg() {
+		return elementUtilities.getTextFromElement(PrivacyPolicyWarningMsg);
+	}
+
+	@FindBy(xpath = "//div[text()='Password confirmation does not match password!']")
+	private WebElement PasswordConfirmWarningMsg;
+
+	public String getTextOfPasswordConfirmWarningMsgAvailableOnRegisterPage() {
+		return elementUtilities.getTextFromElement(PasswordConfirmWarningMsg);
+	}
+
+	@FindBy(xpath = "//ul[@class='breadcrumb']//a[text()='Register']")
+	private WebElement RegisterOptionContainInBreadcrumb;
+	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
+	private WebElement duplicateEmailWarningMsg;
+
+	public boolean didWeGetDuplicateEmailWarningMsg() {
+		return elementUtilities.isElementDisplayed(duplicateEmailWarningMsg);
+	}
+
 
 }
